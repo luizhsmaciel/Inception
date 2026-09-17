@@ -1,12 +1,12 @@
 NAME		= inception
 LOGIN		= luiz-dos
 COMPOSE		= srcs/docker-compose.yml
-DATA_PATH	= /home/$(LOGIN)/data
+DATA_PATH	= /home/$(LOGIN)/
 
 all: build up
 
 build:
-	@mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress
+	@mkdir -p $(DATA_PATH)/data/mariadb $(DATA_PATH)/data/wordpress
 	docker compose -f $(COMPOSE) build
 
 up:
